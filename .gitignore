@@ -32,3 +32,8 @@ override.tf.json
 kubeconfig*
 
 .DS_Store
+
+# tmp ignore for development
+
+terraform.tfvars
+backend.tf
