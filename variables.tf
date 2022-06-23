@@ -9,11 +9,11 @@ variable "cluster_name" {
 }
 
 variable "secondary_cidr" {
-  description = "secondary cidr block for vpc"
+  description = "The secondary CIDR block to associate with the VPC, must be /16 division or higher"
   type        = string
 }
 
 variable "secondary_subnets" {
-  description = "secondary subnet az ranges"
+  description = "A map where the `key` is the name of the availability zone and the `value` is the subnet CIDR"
   type        = map(any)
 }
