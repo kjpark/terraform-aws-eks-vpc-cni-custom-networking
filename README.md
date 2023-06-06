@@ -21,3 +21,12 @@ secondary_subnets = {
   us-east-1d = "100.64.192.0/18"
 }
 ```
+
+Don't forget to configure `kubectl` provider if necessary. Example:
+
+```
+provider "kubectl" {
+  config_path    = "~/.kube/config"
+  config_context = data.aws_eks_cluster.this.arn
+}
+```
