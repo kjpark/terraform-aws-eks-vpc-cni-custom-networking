@@ -19,6 +19,6 @@ resource "kubectl_manifest" "eniconfig" {
 
 resource "null_resource" "enable_custom_networking" {
   provisioner "local-exec" {
-    command = "kubectl set env daemonset aws-node -n kube-system AWS_VPC_K8S_CNI_CUSTOM_NETWORK_CFG=true ENI_CONFIG_LABEL_DEF=topology.kubernetes.io/zone"
+    command = "kubectl set env daemonset aws-node -n kube-system AWS_VPC_K8S_CNI_CUSTOM_NETWORK_CFG=true ENI_CONFIG_LABEL_DEF=topology.kubernetes.io/zone ENABLE_PREFIX_DELEGATION=true WARM_PREFIX_TARGET=1"
   }
 }
